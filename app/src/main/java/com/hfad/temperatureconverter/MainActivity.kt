@@ -42,7 +42,9 @@ fun Hello(name: String) {
 }
 
 
-@Preview
+// Preview - предварительный просмотр компонентной функции
+// Show Background - установка заднего фона, чтобы не был прозрачным
+@Preview(showBackground = true)
 @Composable
 fun PreviewMainActivity() {
     Column {
