@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 
 
 // Активность расширяет Component Activity
@@ -18,9 +19,16 @@ class MainActivity : ComponentActivity() {
         // Задает содержимое активности
         // Файл расширения для включения компонентов Compose в UI Activity
         setContent {
-
-            // Вывод текста - аналог TextView
-            Text("Hello friend! Welcome to Jetpack Compose.")
+            Hello("everyone")
         }
+    }
+
+
+    // Компонентная функция - компонент Compose
+    @Composable
+    fun Hello(name: String) {
+
+        // Вывод текста - аналог TextView
+        Text("Hello $name! Welcome to Jetpack Compose")
     }
 }
