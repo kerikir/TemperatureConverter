@@ -18,6 +18,8 @@ class MainActivity : ComponentActivity() {
         // Задает содержимое активности
         // Файл расширения для включения компонентов Compose в UI Activity
         setContent {
+
+            // Вывод текста - аналог TextView
             Text("Hello friend! Welcome to Jetpack Compose.")
         }
     }
