@@ -3,6 +3,7 @@ package com.hfad.temperatureconverter
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material3.Text
 
 
 // Активность расширяет Component Activity
@@ -17,7 +18,7 @@ class MainActivity : ComponentActivity() {
         // Задает содержимое активности
         // Файл расширения для включения компонентов Compose в UI Activity
         setContent {
-
+            Text("Hello friend! Welcome to Jetpack Compose.")
         }
     }
 }
