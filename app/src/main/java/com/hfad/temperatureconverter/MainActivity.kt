@@ -29,13 +29,13 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+}
 
 
-    // Компонентная функция - компонент Compose
-    @Composable
-    fun Hello(name: String) {
+// Компонентная функция - компонент Compose
+@Composable
+fun Hello(name: String) {
 
-        // Вывод текста - аналог TextView
-        Text("Hello $name! Welcome to Jetpack Compose")
-    }
+    // Вывод текста - аналог TextView
+    Text("Hello $name! Welcome to Jetpack Compose")
 }
