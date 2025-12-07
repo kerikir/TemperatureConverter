@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 
 
 // Активность расширяет Component Activity
+// Component Activity - для определения базовой активности, которая использует для UI Compose
 class MainActivity : ComponentActivity() {
 
     // Переопределяет onCreate()
@@ -14,6 +15,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         // Задает содержимое активности
+        // Файл расширения для включения компонентов Compose в UI Activity
         setContent {
 
         }
