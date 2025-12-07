@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 
 
 // Активность расширяет Component Activity
@@ -38,4 +39,14 @@ fun Hello(name: String) {
 
     // Вывод текста - аналог TextView
     Text("Hello $name! Welcome to Jetpack Compose")
+}
+
+
+@Preview
+@Composable
+fun PreviewMainActivity() {
+    Column {
+        Hello("friend")
+        Hello("everyone")
+    }
 }
