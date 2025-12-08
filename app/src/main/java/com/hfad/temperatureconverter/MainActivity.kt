@@ -20,9 +20,17 @@ class MainActivity : ComponentActivity() {
         // Задает содержимое активности
         // Файл расширения для включения компонентов Compose в UI Activity
         setContent {
-
+            MainActivityContent()
         }
     }
+}
+
+
+// Компонентная функция - компонент Compose
+/** Основное содержание активности */
+@Composable
+fun MainActivityContent() {
+
 }
 
 
@@ -31,5 +39,5 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun PreviewMainActivity() {
-
+    MainActivityContent()
 }
