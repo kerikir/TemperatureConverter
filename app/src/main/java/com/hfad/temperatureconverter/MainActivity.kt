@@ -7,6 +7,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -62,6 +63,14 @@ fun TemperatureText(celsius: Int) {
     Text("$celsius Celsius is $fahrenheit Fahrenheit")
 }
 
+
+@Composable
+fun ConvertButton(clicked: () -> Unit) {
+    // Кнопка
+    Button(onClick = clicked) {
+        Text("Convert")
+    }
+}
 
 
 // Компонентная функция - компонент Compose
