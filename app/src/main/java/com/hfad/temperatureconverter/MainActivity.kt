@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -49,6 +50,13 @@ fun Header(image: Int, description: String) {
             .fillMaxWidth(),
         contentScale = ContentScale.Crop
     )
+}
+
+
+@Composable
+fun TemperatureText(celsius: Int) {
+    val fahrenheit = (celsius.toDouble() * 9/5) + 32
+    Text("$celsius Celsius is $fahrenheit Fahrenheit")
 }
 
 
