@@ -33,10 +33,8 @@ class MainActivity : ComponentActivity() {
 }
 
 
-// Компонентная функция - компонент Compose
-/** Основное содержание активности */
 @Composable
-fun MainActivityContent() {
+fun Header(image: Int, description: String) {
 
     // Вывод избражения
     // painter - указывает какое изображение
@@ -44,13 +42,21 @@ fun MainActivityContent() {
     // modifier - дополнительные настройки компонента Compose
     // content scale - масштабирование изображения
     Image(
-        painter = painterResource(R.drawable.sunrise),
-        contentDescription = "sunrise image",
+        painter = painterResource(image),
+        contentDescription = description,
         modifier = Modifier
             .height(180.dp)
             .fillMaxWidth(),
         contentScale = ContentScale.Crop
     )
+}
+
+
+// Компонентная функция - компонент Compose
+/** Основное содержание активности */
+@Composable
+fun MainActivityContent() {
+    Header(R.drawable.sunrise, "sunrise image")
 }
 
 
