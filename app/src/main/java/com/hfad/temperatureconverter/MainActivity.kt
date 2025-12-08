@@ -3,8 +3,6 @@ package com.hfad.temperatureconverter
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
@@ -23,22 +21,8 @@ class MainActivity : ComponentActivity() {
         // Файл расширения для включения компонентов Compose в UI Activity
         setContent {
 
-            // Выстраивание компонентов в столбец
-            Column {
-                Hello("friend")
-                Hello("everyone")
-            }
         }
     }
-}
-
-
-// Компонентная функция - компонент Compose
-@Composable
-fun Hello(name: String) {
-
-    // Вывод текста - аналог TextView
-    Text("Hello $name! Welcome to Jetpack Compose")
 }
 
 
@@ -47,8 +31,5 @@ fun Hello(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun PreviewMainActivity() {
-    Column {
-        Hello("friend")
-        Hello("everyone")
-    }
+
 }
