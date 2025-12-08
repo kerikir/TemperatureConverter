@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Text
@@ -34,6 +35,7 @@ class MainActivity : ComponentActivity() {
 }
 
 
+
 @Composable
 fun Header(image: Int, description: String) {
 
@@ -53,6 +55,7 @@ fun Header(image: Int, description: String) {
 }
 
 
+
 @Composable
 fun TemperatureText(celsius: Int) {
     val fahrenheit = (celsius.toDouble() * 9/5) + 32
@@ -60,12 +63,19 @@ fun TemperatureText(celsius: Int) {
 }
 
 
+
 // Компонентная функция - компонент Compose
 /** Основное содержание активности */
 @Composable
 fun MainActivityContent() {
-    Header(R.drawable.sunrise, "sunrise image")
+
+    // Выстраивание компонентов в столбец
+    Column {
+        Header(R.drawable.sunrise, "sunrise image")
+        TemperatureText(0)
+    }
 }
+
 
 
 // Preview - предварительный просмотр компонентной функции
