@@ -3,7 +3,9 @@ package com.hfad.temperatureconverter
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 
 
@@ -31,6 +33,13 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainActivityContent() {
 
+    // Вывод избражения
+    // painter - указывает какое изображение
+    // content description - описание изображения для огр. возм.
+    Image(
+        painter = painterResource(R.drawable.sunrise),
+        contentDescription = "sunrise image"
+    )
 }
 
 
