@@ -64,6 +64,10 @@ fun TemperatureText(celsius: Int) {
 }
 
 
+/**
+ * Кнопка для перевода температуры из Цельсия к шкале Фаренгейта
+ * @param clicked Лямбда-выражение, которое выполняет кнопка при нажатии
+ */
 @Composable
 fun ConvertButton(clicked: () -> Unit) {
     // Кнопка
@@ -81,6 +85,9 @@ fun MainActivityContent() {
     // Выстраивание компонентов в столбец
     Column {
         Header(R.drawable.sunrise, "sunrise image")
+        ConvertButton {
+
+        }
         TemperatureText(0)
     }
 }
