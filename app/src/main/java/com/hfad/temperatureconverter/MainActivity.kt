@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -36,7 +38,11 @@ class MainActivity : ComponentActivity() {
         // Задает содержимое активности
         // Файл расширения для включения компонентов Compose в UI Activity
         setContent {
-            MainActivityContent()
+            MaterialTheme {
+                Surface {
+                    MainActivityContent()
+                }
+            }
         }
     }
 }
