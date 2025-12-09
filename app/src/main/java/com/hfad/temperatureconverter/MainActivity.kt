@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -23,6 +22,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.hfad.temperatureconverter.ui.theme.TemperatureConverterTheme
 
 
 // Активность расширяет Component Activity
@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
         // Задает содержимое активности
         // Файл расширения для включения компонентов Compose в UI Activity
         setContent {
-            MaterialTheme {
+            TemperatureConverterTheme {
                 Surface {
                     MainActivityContent()
                 }
