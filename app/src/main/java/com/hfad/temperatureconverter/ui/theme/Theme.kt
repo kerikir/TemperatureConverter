@@ -11,12 +11,16 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
+
+/** Темная палитра */
 private val DarkColorScheme = darkColorScheme(
+    // Цвета определяются в Color.kt
     primary = Purple80,
     secondary = PurpleGrey80,
     tertiary = Pink80
 )
 
+/** Светлая палитра */
 private val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
@@ -33,13 +37,18 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+
+/** Компонентная функция для темы приложения */
 @Composable
 fun TemperatureConverterTheme(
+    // Какую тему использует устройство (светлую или темную)
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
+
+    /** Назначение цветовой палитры */
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
@@ -52,6 +61,7 @@ fun TemperatureConverterTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
+        // Шрифт определяется в Type.kt
         typography = Typography,
         content = content
     )
