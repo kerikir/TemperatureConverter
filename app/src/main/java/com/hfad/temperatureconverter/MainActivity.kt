@@ -7,6 +7,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -109,7 +110,11 @@ fun MainActivityContent() {
     val newCelsius = remember { mutableStateOf("") }
 
     // Выстраивание компонентов в столбец
-    Column {
+    // Modifier - дополнительное поведение к компонентам
+    // padding - внутренние отступы в dp
+    // height - высота компонента в dp
+    // fill max width - ширина компонента равна match_parent
+    Column(modifier = Modifier.padding(16.dp)) {
 
         Header(R.drawable.sunrise, "sunrise image")
 
