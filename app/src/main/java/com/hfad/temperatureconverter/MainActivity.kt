@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -76,6 +77,25 @@ fun ConvertButton(clicked: () -> Unit) {
     Button(onClick = clicked) {
         Text("Convert")
     }
+}
+
+
+@Composable
+fun EnterTemperature(temperature: String, changed: (String) -> Unit) {
+
+    // Поле для ввода
+    /*
+     value - начальная температура
+     label - подсказка (hint)
+     on value change - обработка изменения текста в EditText
+     modifier - дополнительные настройки
+     */
+    TextField(
+        value = temperature,
+        label = { Text("Enter a temperature in Celsius") },
+        onValueChange = changed,
+        modifier = Modifier.fillMaxWidth()
+    )
 }
 
 
