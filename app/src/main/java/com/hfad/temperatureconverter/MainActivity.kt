@@ -106,13 +106,23 @@ fun MainActivityContent() {
 
     // Сохранение значения в памяти на время жизни компонента
     val celsius = remember { mutableStateOf(0) }
+    val newCelsius = remember { mutableStateOf("") }
 
     // Выстраивание компонентов в столбец
     Column {
+
         Header(R.drawable.sunrise, "sunrise image")
-        ConvertButton {
-            celsius.value = 20
+
+        EnterTemperature(newCelsius.value) {
+            newCelsius.value = it
         }
+
+        ConvertButton {
+            newCelsius.value.toIntOrNull()?.let {
+                celsius.value = it
+            }
+        }
+        
         TemperatureText(celsius.value)
     }
 }
