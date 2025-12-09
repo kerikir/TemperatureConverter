@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -122,9 +124,14 @@ fun MainActivityContent() {
             newCelsius.value = it
         }
 
-        ConvertButton {
-            newCelsius.value.toIntOrNull()?.let {
-                celsius.value = it
+        // horizontal arrangement - выравнивание содержимого по горизонтали
+        Row(modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center) {
+
+            ConvertButton {
+                newCelsius.value.toIntOrNull()?.let {
+                    celsius.value = it
+                }
             }
         }
         
