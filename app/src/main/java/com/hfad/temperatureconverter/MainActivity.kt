@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -38,7 +39,7 @@ class MainActivity : ComponentActivity() {
         // Задает содержимое активности
         // Файл расширения для включения компонентов Compose в UI Activity
         setContent {
-            TemperatureConverterTheme {
+            MaterialTheme {
                 Surface {
                     MainActivityContent()
                 }
@@ -76,6 +77,7 @@ fun TemperatureText(celsius: Int) {
 }
 
 
+
 /**
  * Кнопка для перевода температуры из Цельсия к шкале Фаренгейта
  * @param clicked Лямбда-выражение, которое выполняет кнопка при нажатии
@@ -87,6 +89,7 @@ fun ConvertButton(clicked: () -> Unit) {
         Text("Convert")
     }
 }
+
 
 
 @Composable
@@ -108,6 +111,7 @@ fun EnterTemperature(temperature: String, changed: (String) -> Unit) {
 }
 
 
+
 // Компонентная функция - компонент Compose
 /** Основное содержание активности */
 @Composable
@@ -122,7 +126,7 @@ fun MainActivityContent() {
     // padding - внутренние отступы в dp
     // height - высота компонента в dp
     // fill max width - ширина компонента равна match_parent
-    Column(modifier = Modifier.padding(16.dp)) {
+    Column(modifier = Modifier.padding(16.dp).fillMaxWidth()) {
 
         Header(R.drawable.sunrise, "sunrise image")
 
@@ -152,5 +156,9 @@ fun MainActivityContent() {
 @Preview(showBackground = true)
 @Composable
 fun PreviewMainActivity() {
-    MainActivityContent()
+    MaterialTheme {
+        Surface {
+            MainActivityContent()
+        }
+    }
 }
